@@ -1,0 +1,20 @@
+<div class="container">
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Cutting</th>
+        <th>Area</th>
+        <th>Label</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let c of cuttings$ | async">
+        <td><img src="{{c.CuttingImageUrl}}" height="50px" width="50px"/></td>
+        <td>{{c.Area}}</td>
+        <td>
+            {{c.ThinSectionID}}
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
