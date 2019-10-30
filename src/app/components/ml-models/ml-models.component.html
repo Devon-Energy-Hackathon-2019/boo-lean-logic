@@ -1,0 +1,22 @@
+<div class="row">
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>
+              <input type="checkbox" [(ngModel)]="selectedAll" (change)="selectAll();"/>
+          </th>
+          <th>Model Id</th>
+          <th>Model Name</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let s of mlmodel$ | async | thinSections: searchText; let i = index" (click)="setClickedRow(i, s)" [class.active]="i == selectedRow">
+          <td>
+              <input type="checkbox" (click)="toggleCheck(s.ThinSectionID);" />
+          </td>
+          <td>{{s.ModelID}}</td>
+          <td>{{s.ModelName}}</td>
+        </tr>
+      </tbody>
+    </table>
+    </div>

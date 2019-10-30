@@ -1,0 +1,32 @@
+<div class="container">
+  <div class="row">
+    <div class="col-sm-12">
+      <ngx-file-drop contentClassName="filedrop" dropZoneClassName="" dropZoneLabel="Drop files here" (onFileDrop)="dropped($event)" 
+      (onFileOver)="fileOver($event)" (onFileLeave)="fileLeave($event)">
+          <ng-template ngx-file-drop-content-tmp let-openFileSelector="openFileSelector">
+              <div class="container">
+                  <div style="text-align:center">
+                    <h1 class="display-4">Drop Here</h1>
+                    <img src="assets/img/rockbot_logo.png">
+                  </div>
+                  <div style="text-align:center">
+                    <p>I love rocks!</p>
+                  </div>
+              </div>     
+            <!-- <p>
+              <button type="button" (click)="openFileSelector()">Browse Files</button>
+            </p> -->  
+            <div class="progress" *ngIf="loading">
+                <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" style="width: 100%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">
+                  Uploading Files
+                </div>
+            </div>    
+          </ng-template>
+      </ngx-file-drop>
+    </div>
+  </div>
+</div>
+
+
+
+
